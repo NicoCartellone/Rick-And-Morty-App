@@ -1,0 +1,14 @@
+
+.characterIMG{
+    border-radius: 15PX;
+}
+
+.characterCard {
+    margin: 10px;
+    background-color: #eaeaea;
+    border-radius: 15px;
+}
+
+.characterName {
+    color: black;
+}
