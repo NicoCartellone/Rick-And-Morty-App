@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import Characteres from "./Components/Characteres/Characteres";
 import Pagination from "./Components/Pagination/Pagination";
 import Search from "./Components/Search/Search";
+import "./App.css";
 
 
 function App() {
@@ -14,15 +14,15 @@ function App() {
 
   const apiBase = "https://rickandmortyapi.com/api/character/";
 
-  const fetchCharacters = (url) => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setGetAllCharacters(data.results);
-        setinfo(data.info);
-        setLoading(false);
-      })
-      .catch((error) => console.log(error))
+  const fetchCharacters = async(url) => {
+    await fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            setGetAllCharacters(data.results);
+            setinfo(data.info);
+            setLoading(false);
+          })
+          .catch((error) => console.log(error))
   };
 
   const onPrevious = () => {
@@ -41,8 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <img src="https://assets.stickpng.com/images/58f37720a4fa116215a9240f.png" width="450px" height="150px"></img>
-      {/* <h1>Rick And Morty App</h1> */}
+      <img src="https://assets.stickpng.com/images/58f37720a4fa116215a9240f.png" width="450px" height="150px" alt="logo rick and morty"></img>
       <Search nameCharacter={nameCharacter} setNameCharacter={setNameCharacter}/>
       <br/>
       <Pagination

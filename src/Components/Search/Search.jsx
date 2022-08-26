@@ -2,7 +2,7 @@
 const Search = ({ nameCharacter, setNameCharacter }) => {
 
   return (
-    <form onSubmit={en => {ev.preventDefault();}}>
+    <form onSubmit={ev => {ev.preventDefault();}}>
         <input
             style={{width:"300px", height:"30px", margin:"5px"}}
             type="text"
